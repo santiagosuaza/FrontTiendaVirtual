@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import {APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,8 +10,11 @@ import { AdministradorClienteComponent } from './components/administrador-client
 import { AdministradorAdminComponent } from './components/administrador-admin/administrador-admin.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
-import { TodosComponent } from './components/todos/todos.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ProductosService } from './services/productos.service';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { ProductosComponent } from './components/productos/productos.component';
     AdministradorAdminComponent,
     BuscarComponent,
     RegistrarProductoComponent,
-    TodosComponent,
-    ProductosComponent
+    ProductosComponent,
+    AgregarProductoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUTING,
+    HttpClientModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
