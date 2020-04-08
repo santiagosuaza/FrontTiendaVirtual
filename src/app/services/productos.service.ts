@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../modelo/Producto';
+import { Categoria } from '../modelo/Categoria';
 
 @Injectable()
 export class ProductosService {
@@ -11,7 +12,7 @@ export class ProductosService {
   }
 
   getProducto(id: string) {
-  return this.http.get<Producto>('http://localhost:8080/tienda/consultarProducto');
+  return this.http.get<Producto>('http://localhost:8080/tienda/consultarProducto/' + id);
   }
   crearProducto(producto: Producto) {
     return this.http.post<Producto>('http://localhost:8080/tienda/agregarProducto',
@@ -29,4 +30,12 @@ export class ProductosService {
       producto
       );
   }
+  getCategorias() {
+
+    return this.http.get<Categoria[]>('http://localhost:8080/tienda/ConsultarTodosCategoria');
+  }
+  getCategoria(id: string) {
+    return this.http.get<Categoria>('http://localhost:8080/tienda/consultarProducto' + id);
+
+    }
 }

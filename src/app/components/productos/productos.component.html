@@ -1,1 +1,12 @@
-<p>productos works!</p>
+<div *ngFor="let producto of productos" class="card-columns">
+
+    <div class="card  ">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text ">{{producto.detalle}}</p>
+            <p class="card-text "><small class="text-muted ">${{producto.precio}}</small></p>
+            <p class="card-text ">Categoria: {{idCategoria(producto.idCategoria)}}</p>
+            <button (click)="verProducto(producto.idProducto) " type=" button " class="btn btn-outline-primary btn-block ">Ver Mas</button >   
+          </div>
+     </div>
+ </div>

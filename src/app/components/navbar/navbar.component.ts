@@ -13,7 +13,13 @@ export class NavbarComponent implements OnInit {
     _productosService.getProductos();
    }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+  buscarProducto(termino: string) {
+this.router.navigate(['/buscar', termino]);
+}
+tipos(termino: string) {
+ this.router.navigate(['/categoria', termino]);
+ }
 
 }
