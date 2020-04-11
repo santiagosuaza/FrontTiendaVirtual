@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Producto } from 'src/app/modelo/Producto';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { Categoria } from 'src/app/modelo/Categoria';
 
@@ -9,24 +9,33 @@ import { Categoria } from 'src/app/modelo/Categoria';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent   {
-  producto: any = {};
+export class ProductoComponent implements OnInit   {
+
+  id: number;
   categoriaProducto: string;
   categoria: Categoria[];
-  productos: Producto[];
-  constructor(private activatedRoute: ActivatedRoute,
+  producto: Producto;
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
               private productosService: ProductosService
-              ) {
-                this.activatedRoute.params.subscribe(params => {
-                  this.producto = this.productosService.getProducto( params['id'] );
-                  console.log(this.producto);
-              });
-              }
+              ) { }
+              ngOnInit() {
+                this.producto = new Producto();
+                this.id = this.activatedRoute.snapshot.params.id;
+
+                this.productosService.getProducto(this.id)
+                .subscribe(data => {
+                  console.log(data);
+                  this.producto = data;
+                }, error => console.log(error));
+
+                this.productosService.getCategorias().subscribe(
+                  data =>   this.categoria = data);
+            }
 
 
-              idCategoria(i: number) {
-                this.categoriaProducto = this.categoria[i].tipo;
-                return this.categoriaProducto;
-              }
+  idCategoria() {
+            this.categoriaProducto = this.categoria[this.id].tipo;
+            return this.categoriaProducto;
+  }
 
 }

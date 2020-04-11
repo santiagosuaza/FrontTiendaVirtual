@@ -11,9 +11,13 @@
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['productos']">Todos </a>
             </li>
+            <li class="nav-item" routerLinkActive="active" *ngFor="let categoria of categorias">
+                <a class=" nav-link" button (click)="CategoriaProducto(categoria.idCategoria)">{{categoria.tipo}}</a>
+            </li>
         </ul>
+        <form class=" form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2 " type="search " placeholder="Buscar Producto " (keyup.enter)="buscarProducto(buscarTexto.value) " #buscarTexto>
+            <button (click)=" buscarProducto(buscarTexto.value) " class="btn btn-outline-success my-2 my-sm-0 " type="button ">Buscar</button>
+        </form>
     </div>
-    <a class="navbar-brand" href="#">
-
-    </a>
 </nav>

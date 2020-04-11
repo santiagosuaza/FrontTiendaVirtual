@@ -6,15 +6,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductoComponent } from './components/producto/producto.component';
-import { AdministradorClienteComponent } from './components/administrador-cliente/administrador-cliente.component';
-import { AdministradorAdminComponent } from './components/administrador-admin/administrador-admin.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
-import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
 import { ProductosComponent } from './components/productos/productos.component';
-import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductosService } from './services/productos.service';
+import { HomeadminComponent } from './components/administracion/homeadmin/homeadmin.component';
+import { PedidosComponent } from './components/administracion/pedidos/pedidos.component';
+import { AgregarProductoComponent } from './components/administracion/agregar-producto/agregar-producto.component';
+import { BuscarProductoPipe } from './buscar-producto.pipe';
+import { BuscarCategoriasPipe } from './pipes/buscar-categorias.pipe';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+
 
 @NgModule({
   declarations: [
@@ -22,12 +25,14 @@ import { ProductosService } from './services/productos.service';
     NavbarComponent,
     HomeComponent,
     ProductoComponent,
-    AdministradorClienteComponent,
-    AdministradorAdminComponent,
     BuscarComponent,
-    RegistrarProductoComponent,
     ProductosComponent,
-    AgregarProductoComponent
+    HomeadminComponent,
+    PedidosComponent,
+    AgregarProductoComponent,
+    BuscarProductoPipe,
+    BuscarCategoriasPipe,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,

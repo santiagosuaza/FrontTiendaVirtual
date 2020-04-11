@@ -11,7 +11,7 @@ export class ProductosService {
    return this.http.get<Producto[]>('http://localhost:8080/tienda/ConsultarTodosProductos');
   }
 
-  getProducto(id: string) {
+  getProducto(id: number) {
   return this.http.get<Producto>('http://localhost:8080/tienda/consultarProducto/' + id);
   }
   crearProducto(producto: Producto) {

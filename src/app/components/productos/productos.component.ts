@@ -31,7 +31,7 @@ export class ProductosComponent implements OnInit {
   }
   verProducto(id: number) {
     console.log('este es el id ', id);
-    this.router.navigate(['/producto', id]);
+    this.router.navigate(['producto', id]);
   }
   idCategoria(i: number) {
     this.categoriaProducto = this.categoria[i].tipo;

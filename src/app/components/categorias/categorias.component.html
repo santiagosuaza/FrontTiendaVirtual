@@ -1,8 +1,8 @@
-<h1>Buscar {{termino}}</h1>
+<h1>{{idCategoria()}}</h1>
 <hr>
 
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let producto of productos| buscarProducto:termino; let i = index">
+    <div class="card animated fadeIn fast" *ngFor="let producto of productos| buscarProducto:categoriaProducto">
 
         <div class="card">
             <h5 class="heroe.nombre">{{producto.nombre}}</h5>

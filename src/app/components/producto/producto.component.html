@@ -1,24 +1,16 @@
-<h1 class="animated fadeIn">
-    {{ producto.nombre }} <small>({{ producto.precio }})</small></h1>
+<h1 class="animated fadeIn">{{ producto.nombre }} <small> ${{ producto.precio }}</small></h1>
 <hr>
-
-
 <div class="row animated fadeIn fast">
     <div class="col-md-4">
-
         <br><br>
         <a [routerLink]="[ '/productos'] " class="btn btn-outline-primary ">Volver a productos </a>
     </div>
 
     <div class="col-md-8 ">
-        <h3>{{producto.nombre}}</h3>
+        <h3>{{producto.detalle}}</h3>
         <hr>
         <p>
-            {{producto.precio}}
+            Categoria: {{idCategoria()}}
         </p>
-
-
     </div>
-
-
 </div>
