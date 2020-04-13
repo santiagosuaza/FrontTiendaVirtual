@@ -3,6 +3,7 @@ import { ProductosService } from '../../services/productos.service';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/modelo/Producto';
 import { Categoria } from '../../modelo/Categoria';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-productos',
@@ -10,7 +11,7 @@ import { Categoria } from '../../modelo/Categoria';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  productos: Producto[];
+  productos: Observable<Producto[]>;
   categoria: Categoria[];
    index: number;
    codigo: string;
@@ -23,20 +24,19 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productoService.getProductos().subscribe(data => {
-      this.productos = data;
-    });
-    this.productoService.getCategorias().subscribe(
+   // this.productoService.getProductos().subscribe(data => {
+     // this.productos = data;
+   // });
+   this.productos = this.productoService.getProductos();
+   this.productoService.getCategorias().subscribe(
       data =>   this.categoria = data);
   }
   verProducto(id: number) {
     console.log('este es el id ', id);
     this.router.navigate(['producto', id]);
   }
-  idCategoria(i: number) {
-    this.categoriaProducto = this.categoria[i].tipo;
-    return this.categoriaProducto;
-
+  tipo(i: number) {
+    return this.categoria[i - 1].tipo;
   }
 
 }

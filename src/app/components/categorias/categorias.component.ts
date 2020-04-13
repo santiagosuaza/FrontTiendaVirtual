@@ -34,10 +34,9 @@ export class CategoriasComponent implements OnInit {
    }
    verProducto(id: number) {
      console.log('este es el id ', id);
-     this.router.navigate(['producto', id]);
+     this.router.navigate(['producto', 'id']);
    }
-   idCategoria() {
-     this.categoriaProducto = this.categoria[this.termino].tipo;
-     return this.categoriaProducto;
+   tipo() {
+     this.categoriaProducto = this.categoria[this.productos[this.termino]].tipo;
    }
  }

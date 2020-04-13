@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { Producto } from 'src/app/modelo/Producto';
 import { Categoria } from 'src/app/modelo/Categoria';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-buscar',
@@ -11,7 +12,7 @@ import { Categoria } from 'src/app/modelo/Categoria';
 })
 export class BuscarComponent implements OnInit {
   termino: string;
- productos: Producto[];
+ productos: Observable<Producto[]>;
   categoria: Categoria[];
    index: number;
    codigo: string;
@@ -29,9 +30,7 @@ export class BuscarComponent implements OnInit {
     this.activatedRouted.params.subscribe( params => {
       console.log(params.termino);
       this.termino = params.termino; } );
-    this.productoService.getProductos().subscribe(data => {
-      this.productos = data;
-    });
+    this.productos = this.productoService.getProductos();
     this.productoService.getCategorias().subscribe(
       data =>   this.categoria = data);
   }

@@ -20,7 +20,7 @@ export class ProductoComponent implements OnInit   {
               ) { }
               ngOnInit() {
                 this.producto = new Producto();
-                this.id = this.activatedRoute.snapshot.params.id;
+                this.id = this.activatedRoute.snapshot.params['id'];
 
                 this.productosService.getProducto(this.id)
                 .subscribe(data => {
@@ -30,12 +30,11 @@ export class ProductoComponent implements OnInit   {
 
                 this.productosService.getCategorias().subscribe(
                   data =>   this.categoria = data);
-            }
+             }
 
+    pCategoria(cat: number) {
+    return  this.categoria[cat].tipo;
 
-  idCategoria() {
-            this.categoriaProducto = this.categoria[this.id].tipo;
-            return this.categoriaProducto;
-  }
+     }
 
 }

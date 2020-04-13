@@ -17,6 +17,9 @@ import { AgregarProductoComponent } from './components/administracion/agregar-pr
 import { BuscarProductoPipe } from './buscar-producto.pipe';
 import { BuscarCategoriasPipe } from './pipes/buscar-categorias.pipe';
 import { CategoriasComponent } from './components/categorias/categorias.component';
+import { ProductosAdminComponent } from './components/administracion/productos-admin/productos-admin.component';
+import { CategoriasAdminComponent } from './components/administracion/categorias-admin/categorias-admin.component';
+import { ClienteComponent } from './components/administracion/cliente/cliente.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
     AgregarProductoComponent,
     BuscarProductoPipe,
     BuscarCategoriasPipe,
-    CategoriasComponent
+    CategoriasComponent,
+    ProductosAdminComponent,
+    CategoriasAdminComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,

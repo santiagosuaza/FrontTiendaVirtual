@@ -2,14 +2,14 @@
 <hr>
 
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let producto of productos let i = index">
+    <div class="card animated fadeIn fast" *ngFor="let producto of productos | async  let i = index">
 
         <div class="card">
             <h5 class="heroe.nombre">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.detalle}}</p>
             <p class="card-text"><small class="text-muted">{{producto.precio}}</small></p>
-            <p class="card-text ">Categoria: {{idCategoria(producto.idCategoria)}}</p>
-            <button (click)="verProducto(producto.idProducto)" type="button" class="btn btn-primary btn-block">Ver Mas</button >
+            <p class="card-text ">Categoria: {{tipo(producto.idCategoria)}}</p>
+            <button (click)="verProducto(producto.idCategoria)" type="button" class="btn btn-primary btn-block">Ver Mas</button >
                 <br>
         </div>
     </div>
