@@ -20,6 +20,9 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { ProductosAdminComponent } from './components/administracion/productos-admin/productos-admin.component';
 import { CategoriasAdminComponent } from './components/administracion/categorias-admin/categorias-admin.component';
 import { ClienteComponent } from './components/administracion/cliente/cliente.component';
+import { CommonModule } from '@angular/common';
+import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
+
 
 
 @NgModule({
@@ -38,10 +41,12 @@ import { ClienteComponent } from './components/administracion/cliente/cliente.co
     CategoriasComponent,
     ProductosAdminComponent,
     CategoriasAdminComponent,
-    ClienteComponent
+    ClienteComponent,
+    ProductoAgregarComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     APP_ROUTING,
     HttpClientModule,
     FormsModule

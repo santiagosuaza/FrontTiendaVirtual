@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-homeadmin',
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeadminComponent implements OnInit {
 
-  constructor(private activateRoute: ActivatedRoute) { }
+  constructor(private activateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }

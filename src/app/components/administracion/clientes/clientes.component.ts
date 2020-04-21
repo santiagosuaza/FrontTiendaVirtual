@@ -3,6 +3,10 @@ import { Cliente } from '../../../modelo/Cliente';
 import { ClienteServicesService } from '../../../services/cliente-services.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-clientes',
@@ -10,18 +14,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
-clientes: Observable<Cliente[]>;
-
-  constructor(private route: ActivatedRoute,private router: Router,
+ clientes: Observable<Cliente[]>;
+  constructor(private route: ActivatedRoute, private router: Router,
               private clienteServicesService: ClienteServicesService) { }
 
   ngOnInit() {
    this.recargarDatos();
   }
   recargarDatos() {
-    this.clientes = this.clienteServicesService.getCLientes();
+   this.clientes = this.clienteServicesService.getCLientes();
+   console.log(this.clientes);
   }
-  deleteCliente(id: number){
+  deleteCliente(id: number) {
     this.clienteServicesService.deleteCliente(id).subscribe(
       data => {
         console.log(data);

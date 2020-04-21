@@ -13,34 +13,24 @@ export class ProductosService {
 
 
   getProducto(id: number): Observable<any> {
-  return this.http.get('http://localhost:8080//tienda/producto/' + id);
+  return this.http.get('http://localhost:8080/tienda/producto/' + id);
   }
-  crearProducto(producto: Producto) {
-    return this.http.post<Producto>('http://localhost:8080/tienda/agregarProducto',
-    producto
+  crearProducto(producto: Producto): Observable<Producto> {
+    return this.http.post<Producto>(
+      'http://localhost:8080/tienda/producto',
+producto
     );
   }
-  borrarPrducto(id: string) {
-    return this.http.post<Producto>('http://localhost:8080/tienda/agregarProducto',
-     id
-     );
+  getProductos(): Observable<any> {
+    return  this.http.get('http://localhost:8080/tienda/ConsultarTodosProductos');
   }
-  agregarProducto(producto: Producto) {
-    return this.http.post<Producto>(
-      'http://localhost:8080/tienda/agregarProducto',
-      producto
-      );
+  borrarProducto(id: number) {
+    return this.http.delete('http:// localhost:8080/tienda/producto/' + id );
   }
   getCategorias() {
-
     return this.http.get<Categoria[]>('http://localhost:8080/tienda/categorias');
   }
   getCategoria(id: string) {
     return this.http.get<Categoria>('http://localhost:8080/tienda/categoria/' + id);
-
-    }
-
-  getProductos(): Observable<any> {
-    return  this.http.get('http://localhost:8080/tienda/ConsultarTodosProductos');
   }
 }

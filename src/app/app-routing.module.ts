@@ -13,6 +13,7 @@ import { CategoriasAdminComponent } from './components/administracion/categorias
 import { HomeadminComponent } from './components/administracion/homeadmin/homeadmin.component';
 import { Cliente } from './modelo/Cliente';
 import { ClienteComponent } from './components/administracion/cliente/cliente.component';
+import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
 
 
 const APP_ROUTES: Routes = [
@@ -26,8 +27,9 @@ const APP_ROUTES: Routes = [
   {path: 'homeAdmin', component: HomeadminComponent},
   {path: 'productosAdmin', component: ProductosAdminComponent },
   {path: 'agregarProductos', component : AgregarProductoComponent},
-  {path: 'categoriasAmin', component : CategoriasAdminComponent},
-  {path: 'cliente', component : ClienteComponent}
+  {path: 'categoriasAdmin', component : CategoriasAdminComponent},
+  {path: 'cliente/:id', component : ClienteComponent},
+  {path: 'productoAgregar', component : ProductoAgregarComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 
