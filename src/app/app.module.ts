@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { ProductosService } from './services/productos.service';
 import { HomeadminComponent } from './components/administracion/homeadmin/homeadmin.component';
 import { PedidosComponent } from './components/administracion/pedidos/pedidos.component';
-import { AgregarProductoComponent } from './components/administracion/agregar-producto/agregar-producto.component';
 import { BuscarProductoPipe } from './buscar-producto.pipe';
 import { BuscarCategoriasPipe } from './pipes/buscar-categorias.pipe';
 import { CategoriasComponent } from './components/categorias/categorias.component';
@@ -22,6 +21,8 @@ import { CategoriasAdminComponent } from './components/administracion/categorias
 import { ClienteComponent } from './components/administracion/cliente/cliente.component';
 import { CommonModule } from '@angular/common';
 import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
+import { AgregarClienteComponent } from './components/administracion/agregar-cliente/agregar-cliente.component';
+import { AdminComprasComponent } from './components/administracion/admin-compras/admin-compras.component';
 
 
 
@@ -35,7 +36,6 @@ import { ProductoAgregarComponent } from './components/administracion/producto-a
     ProductosComponent,
     HomeadminComponent,
     PedidosComponent,
-    AgregarProductoComponent,
     BuscarProductoPipe,
     BuscarCategoriasPipe,
     CategoriasComponent,
@@ -43,6 +43,8 @@ import { ProductoAgregarComponent } from './components/administracion/producto-a
     CategoriasAdminComponent,
     ClienteComponent,
     ProductoAgregarComponent,
+    AgregarClienteComponent,
+    AdminComprasComponent,
   ],
   imports: [
     BrowserModule,

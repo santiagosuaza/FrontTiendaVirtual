@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProductoComponent } from './components/producto/producto.component';
-import { AgregarProductoComponent } from './components/administracion/agregar-producto/agregar-producto.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { ClientesComponent } from './components/administracion/clientes/clientes.component';
@@ -14,6 +13,7 @@ import { HomeadminComponent } from './components/administracion/homeadmin/homead
 import { Cliente } from './modelo/Cliente';
 import { ClienteComponent } from './components/administracion/cliente/cliente.component';
 import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
+import { PedidosComponent } from './components/administracion/pedidos/pedidos.component';
 
 
 const APP_ROUTES: Routes = [
@@ -21,15 +21,15 @@ const APP_ROUTES: Routes = [
   {path: 'productos', component : ProductosComponent},
  // {path: '**', pathMatch: 'full', redirectTo: 'productos' },
   {path: 'producto/:id', component : ProductoComponent},
-  {path: 'buscar/:termino', component: BuscarComponent},
-  {path: 'categoria/:termino', component: CategoriasComponent},
+  {path: 'buscar/:id', component: BuscarComponent},
+  {path: 'categoria/:id', component: CategoriasComponent},
   {path: 'clientes', component: ClientesComponent},
   {path: 'homeAdmin', component: HomeadminComponent},
   {path: 'productosAdmin', component: ProductosAdminComponent },
-  {path: 'agregarProductos', component : AgregarProductoComponent},
   {path: 'categoriasAdmin', component : CategoriasAdminComponent},
   {path: 'cliente/:id', component : ClienteComponent},
-  {path: 'productoAgregar', component : ProductoAgregarComponent}
+  {path: 'productoAgregar', component : ProductoAgregarComponent},
+  {path: 'pedidos', component : PedidosComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 

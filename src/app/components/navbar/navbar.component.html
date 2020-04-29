@@ -5,14 +5,11 @@
       </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active" routerLinkActive="active">
+            <li class="nav-item " routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['productos']">Todos </a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['homeAdmin']">Administrador</a>
             </li>
             <li class="nav-item" routerLinkActive="active" *ngFor="let categoria of categorias">
                 <a class=" nav-link" button (click)="CategoriaProducto(categoria.idCategoria)">{{categoria.tipo}}</a>

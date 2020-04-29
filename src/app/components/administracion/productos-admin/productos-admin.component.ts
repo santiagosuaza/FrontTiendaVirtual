@@ -5,6 +5,8 @@ import { ProductosService } from 'src/app/services/productos.service';
 import { Router } from '@angular/router';
 import { Categoria } from 'src/app/modelo/Categoria';
 
+
+
 @Component({
   selector: 'app-productos-admin',
   templateUrl: './productos-admin.component.html',
@@ -14,22 +16,20 @@ export class ProductosAdminComponent implements OnInit {
   productos: Observable<Producto[]>;
   categoria: Categoria[];
   index: number;
-  codigo: string;
-  categoriaProducto: string;
   constructor(
     private productoService: ProductosService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.recargarDatos();
-    this.productoService.getCategorias().subscribe(
-      data =>   this.categoria = data);
+   this.recargarDatos();
+   this.productoService.getCategorias().subscribe(
+   data =>   this.categoria = data);
   }
   recargarDatos() {
-    this.productos = this.productoService.getProductos();
-   }
-   tipo(i: number) {
+   this.productos = this.productoService.getProductos();
+  }
+  tipo(i: number) {
     return this.categoria[i - 1].tipo;
   }
   verProducto(id: number) {
@@ -39,7 +39,8 @@ export class ProductosAdminComponent implements OnInit {
   agregarProducto() {
     this.router.navigate(['productoAgregar']);
   }
-  borrarProducto(id: number) {
+  borrarProducto(id: any) {
+    console.log('borrar id', id);
     this.productoService.borrarProducto(id).subscribe(data => {
       console.log(data);
       this.recargarDatos();

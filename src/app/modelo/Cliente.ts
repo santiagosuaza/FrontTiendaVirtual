@@ -3,8 +3,8 @@ export class Cliente {
     usuario: string;
     contrasenha: string;
     correo: string;
-    zip: string;
+    zip: number;
     ciudad: string;
     direccion: string;
-    telefono: string;
+    telefono: number;
 }

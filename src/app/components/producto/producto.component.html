@@ -1,16 +1,23 @@
-<h1 class="animated fadeIn">{{ producto.nombre }} <small> ${{ producto.precio }}</small></h1>
-<hr>
-<div class="row animated fadeIn fast">
-    <div class="col-md-4">
-        <br><br>
-        <a [routerLink]="[ '/productos'] " class="btn btn-outline-primary ">Volver a productos </a>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4">{{ producto.nombre }} <small> ${{ producto.precio }}</small></h1>
+    <hr>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-4">
+            <img src="" alt="">
+            <br><br>
+            <a [routerLink]="[ '/productos'] " class="btn btn-outline-primary ">Volver a productos </a>
+        </div>
 
-    <div class="col-md-8 ">
-        <h3>{{producto.detalle}}</h3>
-        <hr>
-        <p>
-            Categoria: {{pCategoria(producto.idCategoria)}}
-        </p>
+        <div class="col-md-8 ">
+            <h3>Detalles Del Producto:</h3>
+            <p>{{producto.detalle}}</p>
+            <hr>
+            <h3>Cantidad en stock:</h3>
+            <p>{{producto.cantidad}}</p>
+            <hr>
+            <h3>Categoria: </h3>
+            <p>{{pCategoria()}}</p>
+
+        </div>
     </div>
 </div>

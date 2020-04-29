@@ -13,24 +13,23 @@ import { Observable } from 'rxjs';
 export class ProductosComponent implements OnInit {
   productos: Observable<Producto[]>;
   categoria: Categoria[];
-   index: number;
-   codigo: string;
-   categoriaProducto: string;
+  index: number;
+  codigo: string;
+  categoriaProducto: string;
 
   constructor(
     private productoService: ProductosService,
     private router: Router
-  ) {  console.log('Estoy en el constructor');
+    ) {  console.log('Estoy en el constructor');
   }
 
   ngOnInit() {
-   // this.productoService.getProductos().subscribe(data => {
-     // this.productos = data;
-   // });
+
    this.productos = this.productoService.getProductos();
    this.productoService.getCategorias().subscribe(
       data =>   this.categoria = data);
   }
+
   verProducto(id: number) {
     console.log('este es el id ', id);
     this.router.navigate(['producto', id]);

@@ -20,13 +20,13 @@ export class NavbarComponent implements OnInit {
       data =>   this.categorias = data);
   }
   CategoriaProducto(termino: string) {
-  this.router.navigate(['/categoria', termino]);
+  this.router.navigate(['categoria', termino]);
   }
   buscarProducto(termino: string) {
   this.router.navigate(['/buscar', termino]);
   }
   tipos(termino: string) {
-  this.router.navigate(['/categoria', termino]);
+  this.router.navigate(['categoria', termino]);
   }
   idCategoria(i: number) {
  this.categoriaProducto = this.categorias[i].tipo;

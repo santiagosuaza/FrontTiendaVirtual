@@ -15,10 +15,8 @@ export class ProductoComponent implements OnInit   {
   categoriaProducto: string;
   categoria: Categoria[];
   producto: Producto;
-  constructor(private activatedRoute: ActivatedRoute, private router: Router,
-              private productosService: ProductosService
-              ) { }
-              ngOnInit() {
+    constructor(private activatedRoute: ActivatedRoute, private router: Router, private productosService: ProductosService) { }
+   ngOnInit() {
                 this.producto = new Producto();
                 this.id = this.activatedRoute.snapshot.params['id'];
 
@@ -32,8 +30,8 @@ export class ProductoComponent implements OnInit   {
                   data =>   this.categoria = data);
              }
 
-    pCategoria(cat: number) {
-    return  this.categoria[cat].tipo;
+      pCategoria() {
+     return  this.categoria[this.producto.idCategoria - 1].tipo;
 
      }
 

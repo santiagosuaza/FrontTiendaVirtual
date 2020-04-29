@@ -1,16 +1,19 @@
-<h1 class="text-center">Todos los Productos</h1>
-<hr>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Todos Los Productos</h2>
+    </div>
 
-<div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let producto of productos | async  let i = index">
-
-        <div class="card">
-            <h5 class="producto.nombre">{{producto.nombre}}</h5>
-            <p class="card-text">{{producto.detalle}}</p>
-            <p class="card-text"><small class="text-muted">{{producto.precio}}</small></p>
-            <p class="card-text ">Categoria: {{tipo(producto.idCategoria)}}</p>
-            <button (click)="verProducto(producto.idProducto)" type="button" class="btn btn-primary btn-block">Ver Mas</button >
-                <br>
-        </div>
-    </div>  
+    <div class="card-columns ">
+        <div class="card animated fadeIn fast card text-white bg-dark mb-3" *ngFor=" let producto of productos | async let i=i ndex ">
+            <div class="card-body ">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <h4 class="card-subtitle mb-2 text-muted"><small class="text-muted ">${{producto.precio}} COPS</small></h4>
+                <p class="card-text ">{{producto.detalle}}</p>
+                <p class="card-text ">Categoria: {{tipo(producto.idCategoria)}}</p>
+                <button (click)="verProducto(producto.id) " type="button " class="btn btn-primary btn-block ">Ver Mas</button >
+                    <br>
+             </div>
+           
+     </div>
+  </div>
 </div>

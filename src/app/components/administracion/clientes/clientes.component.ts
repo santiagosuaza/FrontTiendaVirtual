@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../../../modelo/Cliente';
-import { ClienteServicesService } from '../../../services/cliente-services.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { Cliente } from 'src/app/modelo/Cliente';
+import { ClienteServicesService } from '../../../services/cliente-services.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -14,26 +13,24 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
- clientes: Observable<Cliente[]>;
-  constructor(private route: ActivatedRoute, private router: Router,
-              private clienteServicesService: ClienteServicesService) { }
+clientes: Observable<Cliente[]>;
 
-  ngOnInit() {
-   this.recargarDatos();
+  constructor(
+   private service: ClienteServicesService,
+   private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.recargarDatos();
   }
   recargarDatos() {
-   this.clientes = this.clienteServicesService.getCLientes();
-   console.log(this.clientes);
+    this.clientes = this.service.getClientes();
   }
-  deleteCliente(id: number) {
-    this.clienteServicesService.deleteCliente(id).subscribe(
-      data => {
-        console.log(data);
-        this.recargarDatos();
-      },
-      error => console.log(error));
-}
-clienteDetalle(id: number) {
-this.router.navigate(['cliente', id]);
-}
+  borrarCliente(id: any) {
+    this.service.deleteCliente(id).subscribe(data => {
+      console.log(data);
+      this.recargarDatos();
+    },
+    error => console.log(error));
+  }
 }

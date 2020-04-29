@@ -1,1 +1,35 @@
-<p>categorias-admin works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Categorias</h2>
+    </div>
+
+    <div style="width: 400px;">
+        <h2>Agregar Categorias</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Nombre: </label>
+                <input name="tipo" type="text" class="form-control" [(ngModel)]="categoria.tipo">
+            </div>
+            <button (click)="Guardar()" type="submit" class="btn btn-success center">Guardar</button>
+        </form>
+    </div>
+    <br><br>
+    <h2>Lista de Categorias</h2>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID Categoria</th>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let categoria of categorias | async  ">
+                <td>{{categoria.idCategoria}}</td>
+                <td>{{categoria.tipo}}</td>
+                <td>
+                    <button (click)="borrar(categoria.idCategoria)" type="button" class="btn btn-danger btn-block" style="margin-left: 10px">Borrar</button >  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

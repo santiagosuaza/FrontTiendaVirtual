@@ -1,78 +1,31 @@
-<h2>Lista Clientes</h2>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Usuario</th>
-            <th>correo</th>
-            <th>contraseña</th>
-            <th>Email</th>
-            <th>zip</th>
-            <th>ciudad</th>
-            <th>direccion</th>
-            <th>telefono</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of clientes">
-            <td>{{cliente.usuario}}</td>
-            <td>{{cliente.correo}}</td>
-            <td>{{cliente.contrasenha}}</td>
-            <td>{{cliente.correo}}</td>
-            <td>{{cliente.zip}}</td>
-            <td>{{cliente.ciudad}}</td>
-            <td>{{cliente.direccion}}</td>
-            <td>{{cliente.telefono}}</td>
-            <td>
-                <button (click)="deleteCliente(cliente.id)" class="btn btn-danger">Delete</button>
-                <button (click)="clienteDetalle(cliente.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
-
-
-
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th scope="col">Usuario</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Contraseña</th>
-            <th scope="col">Zip</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Direccion</th>
-            <th scope="col">Telefono</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of clientes" class="text-center">
-            <th scope="row">1</th>
-            <td>{{cliente.usuario}}</td>
-            <td>{{cliente.correo}}</td>
-            <td>{{cliente.contrasenha}}</td>
-            <td>{{cliente.correo}}</td>
-            <td>{{cliente.zip}}</td>
-            <td>{{cliente.ciudad}}</td>
-            <td>{{cliente.direccion}}</td>
-            <td>{{cliente.telefono}}</td>
-        </tr>
-
-    </tbody>
-</table>
-
-<h1 class="text-center">Todos los clientes</h1>
-<hr>
-
-<div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let cliente of clientes let i = index">
-
-        <div class="card">
-            <h5 class="cliente.usuario">{{cliente.usuario}}</h5>
-            <p class="card-text"><small class="text-muted">{{cliente.correo}}</small></p>
-        </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Lista de Categorias</h2>
     </div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID CLiente</th>
+                <th scope="col">usuario</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Email</th>
+                <th scope="col">ZIP</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let cliente of clientes | async ">
+                <td>{{cliente.idCliente}}</td>
+                <td>{{cliente.usuario}}</td>
+                <td>{{cliente.contrasenha}}</td>
+                <td>{{cliente.correo}}</td>
+                <td>{{cliente.zip}}</td>
+                <td>{{cliente.ciudad}}</td>
+                <td>{{cliente.direccion}}</td>
+                <td>{{cliente.telefono}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

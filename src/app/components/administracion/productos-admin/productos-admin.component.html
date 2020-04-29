@@ -1,35 +1,33 @@
-<h1 class="text-center">Administrador de Productos</h1>
-<button (click)="agregarProducto()" type="button" class="btn btn-secondary btn-lg">Crear Producto</button >   
-    <br>
-<div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let producto of productos | async  let i = index">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Productos</h2>
+    </div>
 
-        <div class="card">
-            <h4 class="producto.nombre">{{producto.nombre}}</h4>
-            <p class="card-text">{{producto.detalle}}</p>
-            <p class="card-text"><small class="text-muted">{{producto.precio}}</small></p>
-            <p class="card-text ">Categoria: {{tipo(producto.idCategoria)}}</p>
-            <button (click)="verProducto(producto.idProducto)" type="button" class="btn btn-primary btn-block">Ver Mas</button > 
-                <button (click)="borrarProducto(producto.idProducto)" type="button" class="btn btn-danger btn-block">Borrar</button >   
-        </div>
-    </div>  
-</div>
-
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Detalle</th>
-            <th scope="col">Precio</th>
-            <th scope="col">ID Categoria</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let producto of productos let i = index"  >
-        <tr class="text-center">
-            <th scope="row">1</th>
-            <td>{{producto.nombre}}</td>
-            <td>{{producto.precio}}</td>
-            <td>{{producto.idCategoria}}</td>            
-        </tr>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID Producto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Precio</th>
+                <th scope="col">ID Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let producto of productos | async  ">
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.detalle}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.idCategoria}}</td>
+                <td>
+                    <button (click)="verProducto(producto.id)" type="button" class="btn btn-primary btn-block" style="margin-left: 10px">Ver Mas</button > 
+                 <button (click)="borrarProducto(producto.id)" type="button" class="btn btn-danger btn-block"style="margin-left: 10px">Borrar</button >   
+             </td>          
+          </tr>
     </tbody>
-</table>
+  </table>
+  <button (click)="agregarProducto()" type="submit" class="btn btn-success center">Agregar Producto</button>
+</div>

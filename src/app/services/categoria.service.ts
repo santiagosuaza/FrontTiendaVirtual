@@ -10,19 +10,20 @@ export class CategoriaService {
 
   constructor(private http: HttpClient) { }
   getCategoria(id: number): Observable<any> {
-    return this.http.get('http://localhost:8080/tienda/categoria' + id);
+    return this.http.get('http://localhost:8080/tienda/categoria/' + id);
   }
   crearCategoria(categoria: Categoria) {
-    return this.http.post<Categoria>('http://localhost:8080//tienda/categoria',
+    return this.http.post<Categoria>('http://localhost:8080/tienda/categoria',
     categoria
     );
   }
   borrarCategoria(id: string) {
-    return this.http.post<Categoria>('http://localhost:8080/tienda/agregarProducto',
-     id
-     );
+    return this.http.delete('http://localhost:8080//tienda/categoria/' + id);
   }
   agregarCategoria(categoria: Categoria) {
     return this.http.post<Categoria>('http://localhost:8080/tienda/categoria', categoria);
+  }
+  getCategorias(): Observable<any> {
+   return this.http.get('http://localhost:8080/tienda/categorias');
   }
 }
