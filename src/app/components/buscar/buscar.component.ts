@@ -11,28 +11,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./buscar.component.css']
 })
 export class BuscarComponent implements OnInit {
-  termino: string;
+
  productos: Observable<Producto[]>;
   categoria: Categoria[];
    index: number;
    codigo: string;
    categoriaProducto: string;
+   termino: string;
 
 
   constructor(
     private activatedRouted: ActivatedRoute,
     private productoService: ProductosService,
     private router: Router
-  ) {  console.log('Estoy en el constructor');
-  }
+  ) {}
 
   ngOnInit() {
-    this.activatedRouted.params.subscribe( params => {
-      console.log(params.termino);
-      this.termino = params.termino; } );
-    this.productos = this.productoService.getProductos();
-    this.productoService.getCategorias().subscribe(
-      data =>   this.categoria = data);
+    this.termino=this.activatedRouted.snapshot.params['id'];
+    console.log(this.activatedRouted.snapshot.params['id']);
+    this.productos = this.productoService.getBuscarProducto(this.activatedRouted.snapshot.params['id']);
+
   }
   verProducto(id: number) {
     console.log('este es el id ', id);

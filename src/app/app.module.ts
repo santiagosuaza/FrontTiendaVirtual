@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
 import { AgregarClienteComponent } from './components/administracion/agregar-cliente/agregar-cliente.component';
 import { AdminComprasComponent } from './components/administracion/admin-compras/admin-compras.component';
+import { AdminCompraComponent } from './components/administracion/admin-compra/admin-compra.component';
 
 
 
@@ -45,6 +46,7 @@ import { AdminComprasComponent } from './components/administracion/admin-compras
     ProductoAgregarComponent,
     AgregarClienteComponent,
     AdminComprasComponent,
+    AdminCompraComponent,
   ],
   imports: [
     BrowserModule,

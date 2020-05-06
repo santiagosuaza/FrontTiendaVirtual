@@ -26,8 +26,8 @@ export class CategoriasComponent implements OnInit {
 
  ngOnInit() {
     this.categoria = new Categoria();
-    this.productos = this.productoService.getProductos();
-    this.id = this.activatedRouted.snapshot.params['id'];
+
+    this.productos = this.productoService.getProductosCategoria( this.activatedRouted.snapshot.params['id']);
     this.categoriaService.getCategoria(this.id) .subscribe(data => {
     console.log(data);
     this.categoria = data;

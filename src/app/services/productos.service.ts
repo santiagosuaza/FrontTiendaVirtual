@@ -19,7 +19,7 @@ export class ProductosService {
   return this.http.post<Producto>('http://localhost:8080/tienda/producto', producto );
   }
   getProductos(): Observable<any> {
-    return  this.http.get('http://localhost:8080/tienda/ConsultarTodosProductos');
+    return  this.http.get('http://localhost:8080/tienda/Productos');
   }
   borrarProducto(id: number) {
     return this.http.delete('http://localhost:8080/tienda/producto/' + id );
@@ -30,4 +30,10 @@ export class ProductosService {
   getCategoria(id: string) {
     return this.http.get<Categoria>('http://localhost:8080/tienda/categoria/' + id);
   }
+ getProductosCategoria(id: string): Observable<any> {
+  return this.http.get<Producto>('http://localhost:8080/tienda/productoCategoria/' + id);
+ }
+ getBuscarProducto(id: string): Observable<any> {
+  return this.http.get<Producto>('http://localhost:8080/tienda/productoBuscar/' + id);
+ }
 }

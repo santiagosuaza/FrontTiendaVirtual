@@ -14,6 +14,8 @@ import { Cliente } from './modelo/Cliente';
 import { ClienteComponent } from './components/administracion/cliente/cliente.component';
 import { ProductoAgregarComponent } from './components/administracion/producto-agregar/producto-agregar.component';
 import { PedidosComponent } from './components/administracion/pedidos/pedidos.component';
+import { AdminComprasComponent } from './components/administracion/admin-compras/admin-compras.component';
+import { AdminCompraComponent } from './components/administracion/admin-compra/admin-compra.component';
 
 
 const APP_ROUTES: Routes = [
@@ -29,7 +31,9 @@ const APP_ROUTES: Routes = [
   {path: 'categoriasAdmin', component : CategoriasAdminComponent},
   {path: 'cliente/:id', component : ClienteComponent},
   {path: 'productoAgregar', component : ProductoAgregarComponent},
-  {path: 'pedidos', component : PedidosComponent}
+  {path: 'pedidos', component : PedidosComponent},
+  {path: 'admin-compras', component : AdminComprasComponent},
+  {path: 'admin-compra/:id', component : AdminCompraComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 

@@ -1,1 +1,32 @@
-<p>admin-compras works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Canastas </h2>
+    </div>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID de la Canasta</th>
+                <th scope="col">ID Cliente</th>
+                <th scope="col">ID priducto Canastas</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let canasta of canastas | async  ">
+                <td>{{canasta.id}}</td>
+                <td>{{canasta.idCliente}}</td>
+                <td>{{canasta.idProductoCanasta}}</td>
+                <td>{{canasta.fecha}}</td>
+                <td>{{canasta.direccion}}</td>
+                <td>{{canasta.ciudad}}</td>
+                <td>
+                    <button (click)="verCanasta(canasta.id)" type="button" class="btn btn-primary btn-block" style="margin-left: 10px">Ver Mas</button > 
+             </td>    
+            </tr>
+        </tbody>
+    </table>
+
+</div>

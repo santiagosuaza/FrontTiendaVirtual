@@ -9,7 +9,7 @@ export class CanastaService {
 
   constructor(private http: HttpClient) { }
  getCanastas(): Observable<any> {
-   return this.http.get('http://localhost:8080/tienda/ConsultarTodosCanasta');
+   return this.http.get('http://localhost:8080/tienda/Canastas');
  }
  getCanasta(id: number): Observable<any> {
    return this.http.get('http://localhost:8080/tienda/canasta/' + id);
