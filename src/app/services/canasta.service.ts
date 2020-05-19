@@ -9,12 +9,15 @@ export class CanastaService {
 
   constructor(private http: HttpClient) { }
  getCanastas(): Observable<any> {
-   return this.http.get('http://localhost:8080/tienda/Canastas');
+   return this.http.get('http://localhost:8080/tienda/canastas');
  }
  getCanasta(id: number): Observable<any> {
    return this.http.get('http://localhost:8080/tienda/canasta/' + id);
  }
  borrarCanasta(id: number) {
    return this.http.delete('http://localhost:8080/tienda/canasta/' + id);
- }
+  }
+  getProductosCanasta(id: number): Observable<any> {
+   return this.http.get('http://localhost:8080//tienda/consultarProductosCanasta/' + id);
+  }
 }

@@ -9,6 +9,7 @@ import { Categoria } from '../modelo/Categoria';
 export class CategoriaService {
 
   constructor(private http: HttpClient) { }
+
   getCategoria(id: number): Observable<any> {
     return this.http.get('http://localhost:8080/tienda/categoria/' + id);
   }

@@ -27,8 +27,8 @@ export class ProductosService {
   getCategorias() {
     return this.http.get<Categoria[]>('http://localhost:8080/tienda/categorias');
   }
-  getCategoria(id: string) {
-    return this.http.get<Categoria>('http://localhost:8080/tienda/categoria/' + id);
+  getCategoria(id: number): Observable<any> {
+    return this.http.get('http://localhost:8080/tienda/categoria/' + id);
   }
  getProductosCategoria(id: string): Observable<any> {
   return this.http.get<Producto>('http://localhost:8080/tienda/productoCategoria/' + id);

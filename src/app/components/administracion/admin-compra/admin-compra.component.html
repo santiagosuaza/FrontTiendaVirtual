@@ -1,1 +1,56 @@
-<p>admin-compra works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Informacion De Una Compra</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <p> USUARIO: {{cliente.usuario}}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos Personales </h5>
+            <p class="card-text">ID: {{cliente.idCliente}}</p>
+            <p class="card-text">Usuario: {{cliente.usuario}}</p>
+            <p class="card-text">Correo: {{cliente.correo}}</p>
+            <p class="card-text">Codigo Postal: {{cliente.zip}}</p>
+            <p class="card-text">Cidudad: {{cliente.ciudad}}</p>
+            <p class="card-text">Direccion: {{cliente.direccion}}</p>
+            <p class="card-text">Telefono: {{cliente.telefono}}</p>
+            <a href="#" class="btn btn-primary">Ajustar Datos</a>
+        </div>
+    </div>
+    <br>
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID Producto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">ID Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let producto of productos | async  ">
+                    <td>{{producto.id}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.detalle}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.idCategoria}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Datos de la Canasta
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Numero de Canasta: {{canasta.numeroCanasta}} </h5>
+            <a href="#" class="btn btn-primary">Modificar</a>
+        </div>
+    </div>

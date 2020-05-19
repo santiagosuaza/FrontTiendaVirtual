@@ -33,7 +33,9 @@ const APP_ROUTES: Routes = [
   {path: 'productoAgregar', component : ProductoAgregarComponent},
   {path: 'pedidos', component : PedidosComponent},
   {path: 'admin-compras', component : AdminComprasComponent},
-  {path: 'admin-compra/:id', component : AdminCompraComponent}
+  {path: 'admin-compra/:id', component : AdminCompraComponent},
+  {path: 'cliente/:id', component : ClienteComponent},
+  {path: 'clientes', component : ClientesComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 

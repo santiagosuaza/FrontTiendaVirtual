@@ -1,1 +1,32 @@
-<p>cliente works!</p>
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4"> <small></small></h1>
+    <hr>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-4">
+            <img src="" alt="">
+            <br><br>
+            <a [routerLink]="[ '/clientes'] " class="btn btn-outline-primary ">Volver a Clientes </a>
+        </div>
+
+        <div class="col-md-8 ">
+            <h3>Id Del Cliente</h3>
+            <p>{{cliente.idCliente}}</p>
+            <hr>
+            <h3>Usuario</h3>
+            <p>{{cliente.usuario}}</p>
+            <hr>
+            <h3>Contraseña</h3>
+            <p>{{cliente.contrasenha}}</p>
+            <h3>Correo</h3>
+            <p>{{cliente.correo}}</p>
+            <h3>Codigo Postal</h3>
+            <p>{{cliente.zip}}</p>
+            <h3>Ciudad</h3>
+            <p>{{cliente.ciudad}}</p>
+            <h3>Direccion</h3>
+            <p>{{cliente.direccion}}</p>
+            <h3>Telefono</h3>
+            <p>{{cliente.telefono}}</p>
+        </div>
+    </div>
+</div>

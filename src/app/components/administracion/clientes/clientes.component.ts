@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/modelo/Cliente';
@@ -13,7 +15,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
-clientes: Observable<Cliente[]>;
+ clientes: Observable<Cliente[]>;
+ id: number;
 
   constructor(
    private service: ClienteServicesService,
@@ -32,5 +35,8 @@ clientes: Observable<Cliente[]>;
       this.recargarDatos();
     },
     error => console.log(error));
+  }
+  verCliente(id: number) {
+    this.router.navigate(['cliente', id]);
   }
 }

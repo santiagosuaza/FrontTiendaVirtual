@@ -24,6 +24,8 @@ import { ProductoAgregarComponent } from './components/administracion/producto-a
 import { AgregarClienteComponent } from './components/administracion/agregar-cliente/agregar-cliente.component';
 import { AdminComprasComponent } from './components/administracion/admin-compras/admin-compras.component';
 import { AdminCompraComponent } from './components/administracion/admin-compra/admin-compra.component';
+import { ClientesComponent } from './components/administracion/clientes/clientes.component';
+import { CanastaUsuarioComponent } from './components/canasta-usuario/canasta-usuario.component';
 
 
 
@@ -47,6 +49,8 @@ import { AdminCompraComponent } from './components/administracion/admin-compra/a
     AgregarClienteComponent,
     AdminComprasComponent,
     AdminCompraComponent,
+    ClientesComponent,
+    CanastaUsuarioComponent,
   ],
   imports: [
     BrowserModule,

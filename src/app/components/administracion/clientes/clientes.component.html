@@ -25,6 +25,9 @@
                 <td>{{cliente.ciudad}}</td>
                 <td>{{cliente.direccion}}</td>
                 <td>{{cliente.telefono}}</td>
+                <button (click)="verCliente(cliente.idCliente)" type="button" class="btn btn-primary btn-block" style="margin-left: 10px">Ver Mas</button > 
+                <button (click)="borrarCliente(cliente.idCliente)" type="button" class="btn btn-danger btn-block"style="margin-left: 10px">Borrar</button >   
+
             </tr>
         </tbody>
     </table>

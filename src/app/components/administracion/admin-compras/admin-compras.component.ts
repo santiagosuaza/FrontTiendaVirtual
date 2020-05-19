@@ -23,6 +23,7 @@ export class AdminComprasComponent implements OnInit {
     this.canastas = this.service.getCanastas();
   }
   verCanasta(id: number) {
+    console.log(id);
     this.router.navigate(['admin-compra', id]);
   }
 

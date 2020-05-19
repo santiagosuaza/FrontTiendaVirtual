@@ -21,6 +21,7 @@ export class CategoriasComponent implements OnInit {
  constructor(
   private activatedRouted: ActivatedRoute,
   private productoService: ProductosService,
+  private serviceCategoria: CategoriaService,
   private categoriaService: CategoriaService,
   private router: Router) { }
 

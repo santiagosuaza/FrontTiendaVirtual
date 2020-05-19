@@ -15,7 +15,11 @@ export class ProductoComponent implements OnInit   {
   categoriaProducto: string;
   categoria: Categoria[];
   producto: Producto;
-    constructor(private activatedRoute: ActivatedRoute, private router: Router, private productosService: ProductosService) { }
+    constructor(
+      private activatedRoute: ActivatedRoute,
+      private router: Router,
+      private productosService: ProductosService
+    ) { }
    ngOnInit() {
                 this.producto = new Producto();
                 this.id = this.activatedRoute.snapshot.params['id'];
